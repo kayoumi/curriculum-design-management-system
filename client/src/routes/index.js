@@ -2,13 +2,15 @@ import {
   Login,
   Student,
   Teacher,
+  TeacherEdit,
   Course,
-  NotFound
+  NotFound,
+  NoAuth,
+  Profile,
+  Notifications,
 } from '../pages'
 
-// import Layout from '../components/layout'
-
-export const mainRouter = [{
+export const mainRoutes = [{
   pathname: '/login',
   component: Login
 }, {
@@ -16,18 +18,41 @@ export const mainRouter = [{
   component: NotFound
 }]
 
-export const adminRouter = [{
+export const adminRoutes = [{
+    pathname: '/admin',
+    component: Course,
+    exact: true,
+    roles: ['001']
+}, {
   pathname: '/admin/student',
   component: Student,
-  // exact: true
-// }, {
-//   pathname: '/admin/student/add',
-//   component: StudentAdd,
-// }, {
+  exact: true,
+  roles: ['001', '002', '003']
 }, {
   pathname: '/admin/teacher',
-  component: Teacher
+  component: Teacher,
+  exact: true,
+  roles: ['001', '002']
+}, {
+  pathname: '/admin/teacher/edit/:id',
+  component: TeacherEdit,
+  roles: ['001', '002']
 }, {
   pathname: '/admin/course',
-  component: Course
-},]
+  component: Course,
+  roles: ['001']
+}, {
+  pathname: '/admin/noauth',
+  component: NoAuth,
+  roles: ['001', '002', '003']
+}, {
+  pathname: '/admin/profile',
+  component: Profile,
+  roles: ['001', '002', '003']
+}, {
+  pathname: '/admin/notifications',
+  component: Notifications,
+  roles: ['001', '002', '003']
+}
+]
+
