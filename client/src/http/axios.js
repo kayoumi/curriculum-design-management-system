@@ -1,9 +1,6 @@
 import axios from 'axios'
-import qs from 'qs'
+// import qs from 'qs'
 import { message } from 'antd'
-import {
-  useHistory
-} from 'react-router-dom'
 message.config({
 	top: 100,
 	duration: 2,
@@ -20,15 +17,12 @@ axios.defaults.withCredentials = true;
 // 请求拦截
 axios.interceptors.request.use(
   config => {
-    console.log(config);
-    
-    if(config.method === 'post') {
-      config.data = qs.stringify(config.data)
-    }
+    // if(config.method === 'post') {
+    //   config.data = qs.stringify(config.data)
+    // }
     if(sessionStorage.token) {
       config.headers.Authorization = sessionStorage.token || sessionStorage.admin
     }
-
     config.data = Object.assign({}, config.data, {
       authToken: 'grnughruightruaig'
     })
@@ -52,7 +46,6 @@ axios.interceptors.response.use(
         case 403:
           message.error('登录过期，请重新登录')
           sessionStorage.removeItem('token')
-          useHistory.push('/login')
           break
         case 404:
           message.error('资源不存在')

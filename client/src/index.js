@@ -1,29 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+import { Route, Switch, BrowserRouter as Router, Redirect } from 'react-router-dom'
 import './index.css';
 import App from './App'
-import { Route, Switch, BrowserRouter as Router, Redirect } from 'react-router-dom'
-import { mainRouter } from './routes/index'
-// import zhCN from 'antd/es/locale/zh_CN';
-// import { ConfigProvider } from 'antd';
+import store from './store'
+import { mainRoutes } from './routes'
+
 
 ReactDOM.render(
-  // <ConfigProvider locale={zhCN}>
+  <Provider store={store}>
     <Router>
       <Switch>
-        <Route path="/admin" render={(routerProps) => {
-          // 权限，需要登陆才能访问 /admin
-          return <App {...routerProps} />
-        }} />
+        <Route path='/admin' component={App} />
         {
-          mainRouter.map(route => {
+          mainRoutes.map(route => {
             return <Route key={route.pathname} path={route.pathname} component={route.component}/>
           })
         }
         <Redirect to='/admin' from='/' exact  />
         <Redirect to='/404' />
       </Switch>
-    </Router>,
-  // </ConfigProvider>,
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
