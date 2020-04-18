@@ -1,0 +1,12 @@
+.userInfo-username {
+  color: #fff;
+  font-size: 1.25rem;
+  font-family: '楷体';
+  margin-left: 20px;
+}
+
+@media all and (max-width: 767px) {
+  .userInfo-username {
+    display: none;
+  }
+}
