@@ -41,7 +41,7 @@ class Index extends Component {
       onClick={this.onDropdownMenuClick}
     >
       <Menu.Item
-        key="/admin/notifications"
+        key="/back/notifications"
       >
         <Badge dot={Boolean(this.props.notificationsCount)}>
           通知中心
@@ -49,13 +49,13 @@ class Index extends Component {
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item
-        key="/admin/profile"
+        key="/back/profile"
       >
         个人设置
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item
-        key="/logout"
+        key="/back/logout"
       >
         退出登录
       </Menu.Item>
