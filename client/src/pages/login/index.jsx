@@ -51,12 +51,11 @@ class Index extends Component {
     }
   }
 
-  
   render() {
     return (
       this.props.isLogin
       ?
-        <Redirect to='/admin'/>
+        <Redirect to='/'/>
       :
         <div className="container">
           <Form
@@ -80,7 +79,6 @@ class Index extends Component {
                 disabled={this.props.isLoading}
                 type='text'
                 placeholder="用户名"
-                // onChange={this.handleUser}
               />
             </Form.Item>
             <Form.Item
@@ -96,7 +94,6 @@ class Index extends Component {
                 disabled={this.props.isLoading}
                 type="password"
                 placeholder="密码"
-                // onChange={this.handleUser}
               />
             </Form.Item>
             <Form.Item
