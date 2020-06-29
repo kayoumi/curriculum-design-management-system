@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
-import { Route, Switch, BrowserRouter as Router, Redirect } from 'react-router-dom'
+import { Route, Switch, HashRouter as Router, Redirect } from 'react-router-dom'
 import './index.css';
 import App from './App'
 import store from './store'
@@ -12,14 +12,14 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route path='/admin' component={App} />
+        <Route path='/back' component={App}/>
         {
           mainRoutes.map(route => {
             return <Route key={route.pathname} path={route.pathname} component={route.component}/>
           })
         }
-        <Redirect to='/admin' from='/' exact  />
-        <Redirect to='/404' />
+        <Redirect to='/back' from='/' exact  />
+        <Redirect to='/404' exact/>
       </Switch>
     </Router>
   </Provider>,

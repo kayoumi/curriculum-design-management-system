@@ -11,8 +11,6 @@ const mapState = state => ({
 
  class App extends Component {
   render(){
-    console.log();
-    
     return (
       this.props.isLogin
       ?
@@ -26,15 +24,14 @@ const mapState = state => ({
                     path={route.pathname}
                     exact={route.exact}
                     render = {(routeProps) => {
-
                       const hasPermission = route.roles.includes(this.props.role)
-
-                      return hasPermission ? <route.component {...routeProps}/> : <Redirect to='/admin/noauth' />
+                      return hasPermission ? <route.component {...routeProps}/> : <Redirect to='/back/noauth' />
                     }}
                   />
                 )
               })
             }
+            <Redirect to='/404' exact/>
           </Switch>
         </Layout>
       : <Redirect to='/login'/>
