@@ -1,6 +1,6 @@
 # curriculum-design-management-system
 
-
+> 课程设计管理系统
 
 ## QuickStart
 
