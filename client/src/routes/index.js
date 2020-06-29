@@ -1,13 +1,28 @@
 import {
   Login,
+  Home,
   Student,
   Teacher,
   TeacherEdit,
   Course,
+  CourseEdit,
   NotFound,
   NoAuth,
   Profile,
   Notifications,
+  TeacherGroup,
+  TeacherTopic,
+  TeacherGrade,
+  TeacherAttendance,
+  TeacherAchievement,
+  StudentGroup,
+  StudentGroupMember,
+  StudentTopic,
+  StudentGrade,
+  StudentEvaluate,
+  StudentAchievement,
+  
+  
 } from '../pages'
 
 export const mainRoutes = [{
@@ -19,40 +34,93 @@ export const mainRoutes = [{
 }]
 
 export const adminRoutes = [{
-    pathname: '/admin',
-    component: Course,
+    pathname: '/back',
+    component: Home,
     exact: true,
-    roles: ['001']
+    roles: ['001', '002', '003']
 }, {
-  pathname: '/admin/student',
+  pathname: '/back/noauth',
+  component: NoAuth,
+  exact: true,
+  roles: ['001', '002', '003']
+}, {
+  pathname: '/back/profile',
+  component: Profile,
+  exact: true,
+  roles: ['001', '002', '003']
+}, {
+  pathname: '/back/notifications',
+  component: Notifications,
+  exact: true,
+  roles: ['001', '002', '003']
+}, {
+  pathname: '/back/admin/student',
   component: Student,
   exact: true,
-  roles: ['001', '002', '003']
-}, {
-  pathname: '/admin/teacher',
-  component: Teacher,
-  exact: true,
-  roles: ['001', '002']
-}, {
-  pathname: '/admin/teacher/edit/:id',
-  component: TeacherEdit,
-  roles: ['001', '002']
-}, {
-  pathname: '/admin/course',
-  component: Course,
   roles: ['001']
 }, {
-  pathname: '/admin/noauth',
-  component: NoAuth,
-  roles: ['001', '002', '003']
+  pathname: '/back/admin/teacher',
+  component: Teacher,
+  exact: true,
+  roles: ['001']
 }, {
-  pathname: '/admin/profile',
-  component: Profile,
-  roles: ['001', '002', '003']
+  pathname: '/back/admin/teacher/edit/:id',
+  component: TeacherEdit,
+  roles: ['001']
 }, {
-  pathname: '/admin/notifications',
-  component: Notifications,
-  roles: ['001', '002', '003']
+  pathname: '/back/admin/course',
+  component: Course,
+  exact: true,
+  roles: ['001']
+}, {
+  pathname: '/back/admin/course/edit/:id',
+  component: CourseEdit,
+  roles: ['001']
+}, {
+  pathname: '/back/teacher/group',
+  component: TeacherGroup,
+  roles: ['002']
+}, {
+  pathname: '/back/teacher/topic',
+  component: TeacherTopic,
+  roles: ['002']
+}, {
+  pathname: '/back/teacher/achievement',
+  component: TeacherAchievement,
+  roles: ['002']
+}, {
+  pathname: '/back/teacher/grade',
+  component: TeacherGrade,
+  roles: ['002']
+}, {
+  pathname: '/back/teacher/attendance',
+  component: TeacherAttendance,
+  roles: ['002']
+}, {
+  pathname: '/back/student/group',
+  component: StudentGroup,
+  roles: ['003']
+}, {
+  pathname: '/back/student/member',
+  component: StudentGroupMember,
+  roles: ['003']
+}, {
+  pathname: '/back/student/topic',
+  component: StudentTopic,
+  roles: ['003']
+}, {
+  pathname: '/back/student/achievement',
+  component: StudentAchievement,
+  roles: ['003']
+}, {
+  pathname: '/back/student/grade',
+  component: StudentGrade,
+  roles: ['003']
+}, {
+  pathname: '/back/student/evaluate',
+  component: StudentEvaluate,
+  roles: ['003']
 }
+
 ]
 
