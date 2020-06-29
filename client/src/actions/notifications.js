@@ -47,7 +47,6 @@ export const getNotificationList = () => {
     dispatch(startPost())
     NotificationAPI.getNotifications()
       .then(resp => {
-        console.log(resp)
         dispatch({
           type: actionTypes.RECIVED_NOTIFICATIONS,
           payload: {

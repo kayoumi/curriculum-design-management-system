@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, Button, List, Badge, Spin } from 'antd';
 import { connect } from 'react-redux'
 
-import { markNotificationAsReadById, markAllNotificationsAsRead } from '../../actions/notifications'
+import { markNotificationAsReadById, markAllNotificationsAsRead } from '../../../actions/notifications'
 
 const mapState = state => {
   const {
