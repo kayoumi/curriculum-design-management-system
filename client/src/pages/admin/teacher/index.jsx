@@ -121,8 +121,8 @@ export default class Index extends Component {
       key: 'action',
       render: (record) => (
         <span>
-          <Button size='default' type='primary' onClick={this.toEdit.bind(this, record)}>详情</Button>
-          <Button size='default' type='danger' onClick={this.showDeleteModal.bind(this, record)}>删除</Button>
+          <Button size='default' type='link' onClick={this.toEdit.bind(this, record)}>详情</Button>
+          <Button size='default' type='link' onClick={this.showDeleteModal.bind(this, record)}>删除</Button>
         </span>
       ),
     })
