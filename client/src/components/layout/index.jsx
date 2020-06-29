@@ -62,14 +62,18 @@ class Index extends Component {
           <Sider trigger={null} collapsed={this.state.collapsed} style={{ backgroundColor: 'rgb(32, 37, 42)' }}>
             <Menu
               defaultSelectedKeys={[defaultSelectedKeysArr.join('/')]}
-              defaultOpenKeys={['/back/admin/course']}
+              defaultOpenKeys={['/back/teacher']}
               onClick={this.onMenuClick}
               mode="inline"
               theme='dark'
               className='nav-Menu'
             >
+              <Menu.Item key="/back">
+                  <PieChartOutlined />
+                  <span>首页</span>
+                </Menu.Item>
               <SubMenu
-                key="/back/admin/course"
+                key="/back/admin"
                 title={
                   <span>
                     <MailOutlined />
@@ -91,7 +95,7 @@ class Index extends Component {
                 </Menu.Item>
               </SubMenu>
               <SubMenu
-                key="/back/teacher/group"
+                key="/back/teacher"
                 title={
                   <span>
                     <MailOutlined />
@@ -121,7 +125,7 @@ class Index extends Component {
                 </Menu.Item>
               </SubMenu>
               <SubMenu
-                key="/back/student/student"
+                key="/back/student"
                 title={
                   <span>
                     <MailOutlined />
@@ -132,6 +136,10 @@ class Index extends Component {
                 <Menu.Item key="/back/student/group">
                   <MailOutlined />
                   <span>选择小组</span>
+                </Menu.Item>
+                <Menu.Item key="/back/student/member">
+                  <MailOutlined />
+                  <span>小组成员</span>
                 </Menu.Item>
                 <Menu.Item key="/back/student/topic">
                   <MailOutlined />

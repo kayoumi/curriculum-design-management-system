@@ -29,7 +29,7 @@ class Index extends Component {
   }
 
   onDropdownMenuClick = ({ key }) => {
-    if (key === '/logout') {
+    if (key === '/back/logout') {
       this.props.logout()
     } else {
       this.props.history.push(key)
